@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Todo App</title>
+	<link rel="stylesheet" href="/style.css">
+	<script defer src="https://unpkg.com/htmx.org@2.0.3"></script>
+</head>
+<body>
+	<div class="app">
+		<form method="post" class="add-task-form" hx-post="/add-task" hx-swap="beforeend" hx-on--after-request="this.reset()" hx-target="#app-task-list">
+			<input type="text" name="task" id="task" placeholder="Task...">
+			<button type="submit">Add Task</button>
+		</form>
+		<div class="app-task-list" id="app-task-list">
+			 {{ range .Tasks }}
+				{{ block "app-task-item" . }}
+				<div class="app-task-item" hx-target="closest .app-task-item" hx-swap="outerHTML">
+					<span>{{ .Description }}</span>
+					<button type="button" hx-delete="/delete-task/{{ .ID }}">
+						Delete
+					</button>
+				</div>
+				{{ end }}
+			{{ end }}
+		</div>
+	</div>
+</body>
+</html>
