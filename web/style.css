@@ -1,0 +1,93 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	height: 100vh;
+	width: 100vw;
+	font-family: sans-serif;
+}
+
+body {
+	justify-content: center;
+	align-items: center;
+}
+
+.app {
+	display: flex;
+	flex-direction: column;
+	border-radius: 8px;
+	box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
+}
+
+.add-task-form {
+	display: flex;
+	flex-direction: row;
+	flex-grow: 0;
+	flex-shrink: 0;
+}
+
+.add-task-form input {
+	border-radius: 8px 0 0 0;
+	border: 2px solid lightskyblue;
+	border-right: none;
+	padding: 14px;
+	font-size: 16px;
+	outline: none;
+}
+
+.add-task-form input:focus {
+	border: 2px solid lightskyblue;
+	border-right: none;
+}
+
+.add-task-form button {
+	border-radius: 0 8px 0 0;
+	background-color: lightskyblue;
+	border: none;
+	color: darkblue;
+	padding: 14px;
+	font-size: 16px;
+	cursor: pointer;
+	width: 100px;
+}
+
+.add-task-form button:hover {
+	background-color: lightblue;
+}
+
+.app-task-list {
+	display: flex;
+	flex-direction: column;
+}
+
+.app-task-item {
+	display: flex;
+	flex-direction: row;
+}
+
+.app-task-item:last-child {
+	border-radius: 0 0 8px 8px;
+	overflow: hidden;
+}
+
+.app-task-item span {
+	flex-grow: 1;
+	flex-shrink: 1;
+	padding: 14px;
+	font-size: 16px;
+}
+
+.app-task-item button {
+	background-color: lightcoral;
+	border: none;
+	color: darkred;
+	padding: 14px;
+	font-size: 16px;
+	cursor: pointer;
+	width: 100px;
+}
+
+.app-task-item button:hover {
+	background-color: lightpink;
+}
